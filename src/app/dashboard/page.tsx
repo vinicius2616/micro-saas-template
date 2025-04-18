@@ -1,7 +1,13 @@
 import { handleAuth } from '@/actions/handle-auth'
 import { auth } from '@/lib/auth'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
+
+export const metadata: Metadata = {
+  title: 'Template SaaS - Dashboard',
+  description: 'Template SaaS - Dashboard',
+}
 
 export default async function Dashboard() {
   const session = await auth()
