@@ -12,7 +12,9 @@ export default function useStripe() {
     setStripe(stripeInstance)
   }
 
-  async function createPaymentStripeCheckout(checkoutData: any) {
+  async function createPaymentStripeCheckout(checkoutData: {
+    testeId: string
+  }) {
     if (!stripe) return
 
     try {
@@ -32,7 +34,9 @@ export default function useStripe() {
     }
   }
 
-  async function createSubscriptionStripeCheckout(checkoutData: any) {
+  async function createSubscriptionStripeCheckout(checkoutData: {
+    testeId: string
+  }) {
     if (!stripe) return
 
     try {
@@ -52,7 +56,7 @@ export default function useStripe() {
     }
   }
 
-  async function handleCreateStripePortal(checkoutData: any) {
+  async function handleCreateStripePortal(checkoutData: { testeId: string }) {
     if (!stripe) return
 
     try {
